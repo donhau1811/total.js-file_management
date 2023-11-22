@@ -1,0 +1,63 @@
+{
+	"routes": [
+		{
+			"method": "POST",
+			"url": "/file/upload/",
+			"owner": "controller_files",
+			"schema": "Files",
+			"upload": true,
+			"limit": 102400
+		},
+		{
+			"method": "DELETE",
+			"url": "/file/remove/{id}/",
+			"owner": "controller_files",
+			"params": "id:UID",
+			"schema": "Files"
+		},
+		{
+			"method": "GET",
+			"url": "/",
+			"owner": "controller_files"
+		},
+		{
+			"method": "GET",
+			"url": "/files/",
+			"owner": "controller_files",
+			"schema": "Files"
+		},
+		{
+			"method": "GET",
+			"url": "/file/details/{id}/",
+			"owner": "controller_files",
+			"params": "id:UID",
+			"schema": "Files"
+		},
+		{
+			"method": "GET",
+			"url": "/file/download/{id}/",
+			"owner": "controller_files",
+			"params": "id:string"
+		}
+	],
+	"actions": [
+		{
+			"name": "Files --> query",
+			"input": "f_name:string,f_extension:string,f_path:string,f_size:string"
+		},
+		{
+			"name": "Files --> read",
+			"params": "id:UID",
+			"input": "f_name:string,f_extension:string,f_path:string,f_size:string"
+		},
+		{
+			"name": "Files --> create",
+			"input": "f_name:string,f_extension:string,f_path:string,f_size:string"
+		},
+		{
+			"name": "Files --> remove",
+			"params": "id:UID",
+			"input": "f_name:string,f_extension:string,f_path:string,f_size:string"
+		}
+	]
+}
